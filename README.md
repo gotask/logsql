@@ -6,6 +6,9 @@ use like this:
 logsql -s "select * from a" -f "|" a.log
 //out:1 2 3		a.log:1|2|3
 
+logsql -s "select c0 from a" -f "|" a.log
+//out:1		a.log:1|2|3
+
 logsql -s "select x from a" -h a.csv
 //out:1		
 a.csv:
