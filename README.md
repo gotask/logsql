@@ -1,5 +1,5 @@
 # logsql
-you can search any log by sql command using logsql
+you can search any log by sql command using logsql.
 logsql is based on TextQL (https://github.com/dinedal/textql), so it has the same License with TextQL.
 use like this:
 ```
@@ -25,3 +25,5 @@ logsql -s "x" -h a.csv
 ```
 you can see TextQL for anyother complex usage.
 by the way,it reads xlsx by https://github.com/tealeg/xlsx.
+
+### download the executable file in release(windows or linux).
