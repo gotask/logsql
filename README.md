@@ -3,19 +3,19 @@ you can search any log by sql command using logsql.
 logsql is based on TextQL (https://github.com/dinedal/textql), so it has the same License with TextQL.
 use like this:
 ```
-logsql -s "select * from a" -f "|" a.log
+logsql -s "select * from t0" -f "|" a.log
 //out:1 2 3		a.log:1|2|3
 
-logsql -s "select c0 from a" -f "|" a.log
+logsql -s "select c0 from t0" -f "|" a.log
 //out:1		a.log:1|2|3
 
-logsql -s "select x from a" -h a.csv
+logsql -s "select x from t0" -h a.csv
 //out:1		
 a.csv:
 x y z
 1 2 3
 	  
-logsql -s "select x+y from a" -h a.xlsx
+logsql -s "select x+y from t0" -h a.xlsx
 //out:3		
 a.xlsx:
 x y z

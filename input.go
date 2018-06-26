@@ -2,9 +2,11 @@ package main
 
 import (
 	"log"
-
-	"path/filepath"
 	"strconv"
+)
+
+var (
+	fileIndex int = -1
 )
 
 type Input struct {
@@ -19,12 +21,13 @@ type Input struct {
 }
 
 func NewInput(hasHeader bool, columnNum int, separator, path string) (*Input, error) {
+	fileIndex++
 	rd, e := NewReader(path)
 	if e != nil {
 		log.Fatalln(e)
 		return nil, e
 	}
-	input := &Input{hasHeader, columnNum, separator, path, rd, filepath.Base(path), nil, nil}
+	input := &Input{hasHeader, columnNum, separator, path, rd, "t" + strconv.Itoa(fileIndex), nil, nil}
 	input.firstRow = input.readLine()
 	if columnNum <= 0 {
 		input.columnNum = len(input.firstRow)
